@@ -19,6 +19,8 @@ primes[3]; // 7
 primes[150]; // undefined
 ```
 
+### Practice: [Access Array Data with Indexes](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/access-array-data-with-indexes)
+
 ## Array literals
 
 You can create arrays in two different ways. The most common of which is to list values in a pair of square brackets. JavaScript arrays can contain any types of values and they can be of mixed types.
@@ -35,6 +37,8 @@ const arrayName = [element0, element1, ..., elementN]
 const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37];
 ```
 
+### Practice: []()
+
 ## Multi-dimensional Arrays
 
 A two-dimensional array is an array within an array. If you fill this array with another array you get a three-dimensional array and so on.
@@ -49,6 +53,8 @@ const multidimensionalArray = [
   [7, 8, 9],
 ];
 ```
+
+### Practice: [Nest one Array within Another Array](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/nest-one-array-within-another-array)
 
 ## Array constructor
 
@@ -75,6 +81,8 @@ console.log(myArray);
 // output: [ 45, 'Hello World!', true, 3.2, undefined ]
 ```
 
+### Practice: []()
+
 ## Accessing nested array elements
 
 Accessing multi-dimensional array elements is quite similar to one-dimension arrays. They are accessed by using [index][index]….. (number of them depends upon the number of arrays deep you want to go inside).
@@ -98,3 +106,5 @@ const myMultiArray = [
 console.log(myMultiArray[1][5][4]);
 // Outputs 5, the value in the last element of the last element of the second element of myMultiArray.
 ```
+
+### Practice: [Access Multi-Dimensional Arrays With Indexes](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/access-multi-dimensional-arrays-with-indexes)
