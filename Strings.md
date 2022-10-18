@@ -75,8 +75,8 @@ string.trim();
 " a a ".trim(); // 'a a'
 ```
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-.replace()
+## .replace()
+
 Returns a string with the first match substring replaced with a new substring.
 
 ### Example
