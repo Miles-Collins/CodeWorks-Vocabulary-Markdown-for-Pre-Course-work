@@ -117,7 +117,7 @@ var latitude = 40.7;
 var inNorthernHemisphere = true;
 ```
 
-[Assigning the Value of One Variable to Another](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another)
+Practice Problem: [Assigning the Value of One Variable to Another](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another)
 
 Each line in the example above begins with the keyword var. The var keyword is used to create a variable. The word that immediately follows var is the name of the variable. The variable’s name should describe the value that it stores (e.g. location).
 
@@ -137,6 +137,16 @@ var subtractNumbers = num2 - num1; // subtractNumbers equals 5
 var multiplyNumbers = num1 * num2; // multiplyNumbers equals 36
 var divideNumbers = num2 / num1; // divideNumbers equals 2.25
 ```
+
+Practice:
+
+[Add Two Numbers with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript)
+
+[Subtract One Number from Another with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/subtract-one-number-from-another-with-javascript)
+
+[Multiply Two Numbers with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-numbers-with-javascript)
+
+[Divide One Number by Another with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/divide-one-number-by-another-with-javascript)
 
 In the example above, the values saved to the variables were calculated using the addition (+), subtraction (-), multiplication (\*), and division (/) operators.
 
@@ -159,7 +169,7 @@ if (A) {
 }
 ```
 
-Now, let’s consider a conditional statement that actualy does something:
+Now, let’s consider a conditional statement that actually does something:
 
 ```js script
 var inNortherHemisphere = true;
@@ -211,14 +221,108 @@ The initialization defines where to begin the loop by declaring (or referencing)
 The stopping condition determines when to stop looping (when the expression evaluates to false)
 The iteration statement updates the iterator each time the loop is completed
 
-- Log the numbers 25 through 50
-- Log the numbers 0-10 using a for loop
-- Log only the odd numbers
-- Log the word 'odd' or 'even' based on the number
-- Log only the numbers that are multiples of 5
-- Log the numbers 0 up tot he variable used above
-- Log only the numbers less than 24
-- Log the word 'invalid' for all numbers greater than 24
+### Example
+
+```js script
+// Assign the variable "i" to where you want the loop to begin. For this example I started with 0.
+// Then assign where you want the loop to stop at. In this example, I assigned the loop to stop when i is no longer less than 5.
+// Lastly, the i++, is telling Javascript that at the end of each loop you want i to increase by 1.
+for (let i = 0; i < 5; i++) {
+  console.log(i); // Prints the numbers from 0 to 4
+}
+//
+```
+
+### Example
+
+```js script
+let i; // 'outsourcing' the definition
+for (i = 10; i >= 1; i--) {
+  console.log(i); // Prints the numbers from 10 to 1
+}
+```
+
+### Example
+
+```js script
+for (i = 1; i <= 100; i++) {
+  console.log(i);
+}
+// Console logs 1 through 100.
+```
+
+You can also insert "if statements" into "for loops" to increase the function of your loops.
+
+### Example
+
+Insert an if statement into my for loop to say if (i divided by 2 equals 0(checks if number is even)) to console log the number.
+
+```js script
+for (i = 1; i <= 100; i++) {
+  if (i % 2 == 0) {
+    console.log(i);
+  }
+}
+// Logs all even numbers from 1 through 100.
+```
+
+### Example
+
+You can also add an else statement to a for loop.
+
+```js script
+for (i = 1; i <= 100; i++) {
+  if (i % 2 == 0) {
+    console.log("Even");
+    // Outputs: Even only when the number is divisible by 2
+  } else {
+    console.log("Odd");
+    // Outputs: Odd only when the number isn't divisible by 2
+  }
+}
+```
+
+### Example
+
+You can also console log the variables with a string to output full sentences.
+
+```js script
+for (i = 1; i <= 100; i++) {
+  if (i % 10 === 0) {
+    console.log(i, "is divisible by 10.");
+    // Outputs: 10,20,30,... is divisible by 10.
+  }
+}
+```
+
+### Example
+
+You can also input equations into your if statements to filter your outputs.
+
+```js script
+for (i = 0; i <= 100; i++) {
+  if (i >= 50) {
+    console.log(i);
+    // Outputs only numbers greater than or equal to 50, through 100.
+  }
+}
+```
+
+### Example
+
+You can also add in your own strings with console log. The next example with log all numbers less than 23, and say Michael Jordan; 24 and above Kobe.
+
+```js script
+for (i = 0; i <= 100; i++) {
+  if (i <= 23) {
+    console.log(i, "Michael Jordan");
+    // Output: 1,2,3...,18,... Michael Jordan
+  } else {
+    console.log(i, "Kobe");
+    // Output: 24,25,...,76,...Kobe
+  }
+}
+```
 
 ### Accessing properties on an object
 
