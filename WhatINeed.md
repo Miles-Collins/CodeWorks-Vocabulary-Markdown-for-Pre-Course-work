@@ -376,7 +376,7 @@ const trainer = {
   name: "Miles",
   pokemon: {
     name: "Charizard",
-    type: "Fire, Flying",
+    type: "Fire, and Flying",
   },
 };
 
@@ -385,43 +385,170 @@ const trainer = {
 console.log(
   trainer.name, // Outputs: Miles
   "sends out", // Outputs: sends out
-  trainer.pokemon.name, // Outputs: Charizard
-  ".",
-  `${trainer.pokemon.name} is type ${trainer.pokemon.type}, .` // Outputs: Charizard is type Fire, Flying.
-  // Using the backtick "`", you can string interpolate variables in a normal sentence.
+  trainer.pokemon.name + // Outputs: Charizard
+    ".",
+  trainer.pokemon.name,
+  "is type",
+  trainer.pokemon.type + "."
 );
 
 // The total output for the console.log() will be
-// Miles sends out Charizard. Charizard is type Fire, Flying.
+// Miles sends out Charizard. Charizard is type Fire, and Flying.
 ```
 
 ```js script
 const Hokage = {
   name: {
     first: "Naruto",
-    last: "Uzu maki",
+    last: "Uzumaki",
+  },
+  powers: {
+    primary: "Rasengan",
+    secondary: "Shadow Clone",
+    special: "Hāremu no Jutsu",
   },
 };
+
+// You can also use the backtick key " ` " to string interpolate complete sentences.
+console.log(
+  `${hokage.name.first} ${hokage.name.last} uses ${hokage.powers.primary}.`
+);
+// Output: Naruto Uzumaki uses Rasengan.
 ```
-
-const cases = [
-{ title: 'The Hound of the Baskervilles', releaseYear: 1901 },
-{ title: 'The Adventure of the Empty House', releaseYear: 1903 },
-{ title: 'The Adventure of the Norwood Builder', releaseYear: 1903 },
-{ title: 'The Adventure of the Dancing Men', releaseYear: 1903 },
-{ title: 'The Adventure of the Solitary Cyclist', releaseYear: 1904 }
-]
-
-- Log the users mobile phone
-- Log 'match' if the users home, mobile and work are all the same
-- Combine and log in the first and last name of the user
-- Ensure there is a space between the first and the last name
 
 ### Working with an array of objects
 
-- Log each item in the 'cart' with its quantity
-- Log the 'cart' total
-- Iterate over the 'student' array to log the names and grade of each
-- Iterate over the 'users' array and log the names and roles of each
-- Iterate over the 'users' array and log only the names of 'instructors'
-- Log the average grade for all students in the array
+```js script
+const zFighters = [
+  { name: "Goku", powerLevel: 9001, race: "Saiyan" },
+  { name: "Gohan", powerLevel: 981, race: "Saiyan" },
+  { name: "Piccolo", powerLevel: 3500, race: "Namekian" },
+  { name: "Krillin", powerLevel: 1770, race: "Human" },
+  { name: "Tien", powerLevel: 1830, race: "Human" },
+  { name: "Yamcha", powerLevel: 1480, race: "Human" },
+  { name: "Chiaotzu", powerLevel: 610, race: "???" },
+];
+
+const villains = [
+  { name: "Saibamen", powerLevel: 1200, race: "Plant" },
+  { name: "Nappa", powerLevel: 4000, race: "Saiyan" },
+  { name: "Vegeta", powerLevel: 18000, race: "Saiyan" },
+];
+```
+
+We can create for loops to access the name of each Z Fighter.
+
+```js script
+for (let i = 0; i <= zFighters.length; i++) {
+  let hero = zFighters[i]; // Optional: I created an alias for more specification.
+  console.log(hero.name); // This will console log the name of each Z Fighter.
+}
+```
+
+We can use for loops to find the total power of the Z Fighters.
+
+```js script
+let total = 0;
+
+for (let i = 0; i <= zFighters.length; i++) {
+  let hero = zFighters[i];
+  total += hero.powerLevel;
+  if (i == zFighters.length - 1) {
+    console.log("The total power level of the Z Fighters is:", total); //Output: The total power level of the Z Fighters is: 19172
+  }
+}
+```
+
+Using nested for loops, you can have more fun creating more complex functions.
+
+```js script
+// Create for loop that iterates over the zFighters array
+for (let i = 0; i <= zFighters.length; i++) {
+  // Create alias to keep track of the index of your array
+  let hero = zFighters[i];
+  // Created another for loop to iterate over villains
+  for (let i = 0; i <= villains.length; i++) {
+    // Created alias for my villains
+    let villain = villains[i];
+    // If statement that ask if the current heroes powerLevel is higher than each villains power level.
+    if (hero.powerLevel > villain.powerLevel) {
+      // If the heroes power level is higher, it will log the victory.
+      console.log(hero.name, "defeated", villain.name);
+    } else {
+      // If heroes power level is lowe, it will log the defeat.
+      console.log(hero.name, "lost to", villain.name);
+      // This stops the for loop when the hero is defeated.
+      break;
+    }
+  }
+}
+```
+
+Using nested for loops, you can have more fun creating more complex functions.
+
+```js script
+// Create for loop that iterates over the zFighters array
+for (let i = 0; i <= zFighters.length; i++) {
+  // Create alias to keep track of the index of your array
+  let hero = zFighters[i];
+  // Created another for loop to iterate over villains
+  for (let i = 0; i <= villains.length; i++) {
+    // Created alias for my villains
+    let villain = villains[i];
+    // If statement that ask if the current heroes powerLevel is higher than each villains power level.
+    if (hero.powerLevel > villain.powerLevel) {
+      // If the heroes power level is higher, it will log the victory.
+      console.log(hero.name, "defeated", villain.name);
+    } else {
+      // If heroes power level is lowe, it will log the defeat.
+      console.log(hero.name, "lost to", villain.name);
+      // This stops the for loop when the hero is defeated.
+      break;
+    }
+  }
+}
+```
+
+You can also use for loops to find the average of an array.
+
+```js script
+// Due to scope. Create your counters, and totals outside of your for loop
+let counter = 0;
+let total = 0;
+
+for (let i = 0; i <= zFighters.length; i++) {
+  // Without using an alias, you can also type zFighters[i]. This is grabbing the current Z Fighter at that index
+  total += zFighters[i].powerLevel;
+  // Use variables like counter to make more complex functions
+  counter++;
+  // Using an if statement console log the average Z Fighters power level, when counter equals the total amount of Z Fighters.
+  if (counter == zFighters.length) {
+    console.log(Math.round(total / zFighters.length));
+  }
+}
+```
+
+Using nested for loops, you can have more fun creating more complex functions.
+
+```js script
+// Create for loop that iterates over the zFighters array
+for (let i = 0; i <= zFighters.length; i++) {
+  // Create alias to keep track of the index of your array
+  let hero = zFighters[i];
+  // Created another for loop to iterate over villains
+  for (let i = 0; i <= villains.length; i++) {
+    // Created alias for my villains
+    let villain = villains[i];
+    // If statement that ask if the current heroes powerLevel is higher than each villains power level.
+    if (hero.powerLevel > villain.powerLevel) {
+      // If the heroes power level is higher, it will log the victory.
+      console.log(hero.name, "defeated", villain.name);
+    } else {
+      // If heroes power level is lowe, it will log the defeat.
+      console.log(hero.name, "lost to", villain.name);
+      // This stops the for loop when the hero is defeated.
+      break;
+    }
+  }
+}
+```
