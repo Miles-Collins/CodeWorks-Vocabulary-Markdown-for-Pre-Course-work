@@ -84,23 +84,15 @@ You can also select HTML elements by their Class name. Unlike ID selectors, Clas
 ### Example
 
 ```js script
-a.link {
-  font-size: 12px;
+.newFont {
+  font-size: 16px;
+  font-family: Times New Roman;
+  color: Blue;
 }
 
-/* HTML Selected: <a href="http://google.com" class="link">,
-<a href="https://boisecodeworks.com/" class="link jumbo"> */
-```
-
-### Example
-
-```js script
-.jumbo {
-  text-size: 1000px;
-}
-
-/* HTML Selected: <a href="https://boisecodeworks.com/" class="link jumbo">,
-<span class="jumbo"> */
+// <p>This is a normal paragraph.</p>
+// <p class="newFont">This paragraph is now in Times New Roman, blue, and 16 font size.</p>
+//    ^^^^^^^^^^^^^^^ <--- Assigned the class newFont to the paragraph
 ```
 
 ## Variables, Data Types, and Mathematical Operators
@@ -112,12 +104,14 @@ a.link {
 - Mathematical Operators — The addition (+), subtraction (-), multiplication (\*), and division (/) characters function as mathematical operators.
 
 ```js script
-var location = "New York City";
-var latitude = 40.7;
-var inNorthernHemisphere = true;
+let location = "New York City";
+let latitude = 40.7;
+let inNorthernHemisphere = true;
 ```
 
-Practice Problem: [Assigning the Value of One Variable to Another](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another)
+Practice Problem:
+
+- [Assigning the Value of One Variable to Another](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another)
 
 Each line in the example above begins with the keyword var. The var keyword is used to create a variable. The word that immediately follows var is the name of the variable. The variable’s name should describe the value that it stores (e.g. location).
 
@@ -130,23 +124,23 @@ Variables can store any data type, including:
 - Boolean — Either true or false, with no quotations. In the example above, the variable inNorthernHemisphere is set to true. The sample code below contains examples of mathematical expressions:
 
 ```js script
-var num1 = 4;
-var num2 = 9;
-var addNumbers = num1 + num2; // addNumbers equals 13
-var subtractNumbers = num2 - num1; // subtractNumbers equals 5
-var multiplyNumbers = num1 * num2; // multiplyNumbers equals 36
-var divideNumbers = num2 / num1; // divideNumbers equals 2.25
+let num1 = 4;
+let num2 = 9;
+let addNumbers = num1 + num2; // addNumbers equals 13
+let subtractNumbers = num2 - num1; // subtractNumbers equals 5
+let multiplyNumbers = num1 * num2; // multiplyNumbers equals 36
+let divideNumbers = num2 / num1; // divideNumbers equals 2.25
 ```
 
 Practice:
 
-[Add Two Numbers with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript)
+- [Add Two Numbers with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript)
 
-[Subtract One Number from Another with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/subtract-one-number-from-another-with-javascript)
+- [Subtract One Number from Another with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/subtract-one-number-from-another-with-javascript)
 
-[Multiply Two Numbers with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-numbers-with-javascript)
+- [Multiply Two Numbers with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-numbers-with-javascript)
 
-[Divide One Number by Another with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/divide-one-number-by-another-with-javascript)
+- [Divide One Number by Another with JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/divide-one-number-by-another-with-javascript)
 
 In the example above, the values saved to the variables were calculated using the addition (+), subtraction (-), multiplication (\*), and division (/) operators.
 
@@ -172,8 +166,8 @@ if (A) {
 Now, let’s consider a conditional statement that actually does something:
 
 ```js script
-var inNortherHemisphere = true;
-var latitude = 40.7;
+let inNortherHemisphere = true;
+let latitude = 40.7;
 if (latitude > 30 && inNorthernHemisphere) {
   console.log("It's cold in December!");
 } else {
@@ -186,8 +180,8 @@ In the example above, if a location has a latitude greater than 30 degrees and i
 Conditional statements can also be used to check more than one condition:
 
 ```js script
-var isPublicSchool = false;
-var inState = true;
+let isPublicSchool = false;
+let inState = true;
 if (isPublicSchool && inState) {
   console.log("Student qualifies for in-state tuition.");
 } else if (isPublicSchool || inState) {
@@ -251,7 +245,7 @@ for (i = 1; i <= 100; i++) {
 // Console logs 1 through 100.
 ```
 
-You can also insert "if statements" into "for loops" to increase the function of your loops.
+### You can also insert "if statements" into "for loops" to increase the function of your loops.
 
 ### Example
 
@@ -268,23 +262,21 @@ for (i = 1; i <= 100; i++) {
 
 ### Example
 
-You can also add an else statement to a for loop.
+You can also add an else statement to your loop.
 
 ```js script
 for (i = 1; i <= 100; i++) {
-  if (i % 2 == 0) {
-    console.log("Even");
-    // Outputs: Even only when the number is divisible by 2
-  } else {
-    console.log("Odd");
-    // Outputs: Odd only when the number isn't divisible by 2
-  }
+  let isEven = i % 2 === 0;
+  // Creates a variable to determine if "i" is even.
+  console.log(isEven);
+  // Outputs: True if i = 2,4,6,...,98
+  // Outputs: False if i = 1,3,5,7,...,99
 }
 ```
 
 ### Example
 
-You can also console log the variables with a string to output full sentences.
+You can also use string interpolation to console.log your variable and a string.
 
 ```js script
 for (i = 1; i <= 100; i++) {
@@ -310,7 +302,7 @@ for (i = 0; i <= 100; i++) {
 
 ### Example
 
-You can also add in your own strings with console log. The next example with log all numbers less than 23, and say Michael Jordan; 24 and above Kobe.
+The next example with log all numbers less than 23, and say Michael Jordan; 24 and above Kobe.
 
 ```js script
 for (i = 0; i <= 100; i++) {
@@ -319,14 +311,107 @@ for (i = 0; i <= 100; i++) {
     // Output: 1,2,3...,18,... Michael Jordan
   } else {
     console.log(i, "Kobe");
-    // Output: 24,25,...,76,...Kobe
+    // Output: 24,25,...,76,... Kobe
+  }
+}
+```
+
+### Example
+
+You can also
+
+```js script
+console.log("Will you catch this Pokemon?");
+for (i = 0; i <= 10; i++) {
+  let success = Math.floor(Math.random() * 10);
+  if (i === success) {
+    console.log("Congratulations you caught the Pokemon.");
+    console.log("It took,", i, "attempts.");
+    break;
+  } else {
+    console.log("The Pokemon ran away...");
   }
 }
 ```
 
 ### Accessing properties on an object
 
-- Log the cost of an ice cream that has 1 scoop of vanilla and 1 scoop of rocky road
+```js script
+// First we need to set up variables to store the cost of our data
+
+let withCheese = 1;
+// Sets the variable "withCheese" to 1
+let bacon = 2;
+// Sets the variable "bacon" to 2
+let burger = 3;
+// Sets the variable "burger" to 3
+let discount = 1.5;
+// Sets the variable "discount" to 1.5
+
+// Now we will create a variable outside of the function and set its value to 0
+let total = 0;
+
+// Now I need to increment total based on what I want to order.
+total += burger; // This adds 3 to total setting total to 3.
+
+total += bacon; // This adds 2 to the total. Total is now at 5.
+
+total -= discount; // This subtracts 1.5 from total, leaving total at 3.5.
+
+console.log(total); // Outputs 3.5
+
+console.log("Your total is $" + total + "0."); // Outputs Your total is $3.50.
+
+theDons();
+```
+
+You can use string interpolation to process ofand evaluating string literals containing one or more placeholders (expressions, variables, etc).
+
+It can be performed using template literals: text ${expression} text.
+
+Example
+
+```js script
+const trainer = {
+  name: "Miles",
+  pokemon: {
+    name: "Charizard",
+    type: "Fire, Flying",
+  },
+};
+
+// Using string interpolation, you can tie variables together.
+
+console.log(
+  trainer.name, // Outputs: Miles
+  "sends out", // Outputs: sends out
+  trainer.pokemon.name, // Outputs: Charizard
+  ".",
+  `${trainer.pokemon.name} is type ${trainer.pokemon.type}, .` // Outputs: Charizard is type Fire, Flying.
+  // Using the backtick "`", you can string interpolate variables in a normal sentence.
+);
+
+// The total output for the console.log() will be
+// Miles sends out Charizard. Charizard is type Fire, Flying.
+```
+
+```js script
+const Hokage = {
+  name: {
+    first: "Naruto",
+    last: "Uzu maki",
+  },
+};
+```
+
+const cases = [
+{ title: 'The Hound of the Baskervilles', releaseYear: 1901 },
+{ title: 'The Adventure of the Empty House', releaseYear: 1903 },
+{ title: 'The Adventure of the Norwood Builder', releaseYear: 1903 },
+{ title: 'The Adventure of the Dancing Men', releaseYear: 1903 },
+{ title: 'The Adventure of the Solitary Cyclist', releaseYear: 1904 }
+]
+
 - Log the users mobile phone
 - Log 'match' if the users home, mobile and work are all the same
 - Combine and log in the first and last name of the user
